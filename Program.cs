@@ -216,6 +216,12 @@ namespace ConsoleApp1
             NodeA.MessageObserver += NodeB.MessageReceived;
             NodeA.MessageObserver += NodeC.MessageReceived;
 
+            NodeB.MessageObserver += NodeA.MessageReceived;
+            NodeB.MessageObserver += NodeC.MessageReceived;
+
+            NodeC.MessageObserver += NodeA.MessageReceived;
+            NodeC.MessageObserver += NodeB.MessageReceived;            
+
             NodeA.SendMessage("To aqui", NodeB);
 
             Console.ReadKey();
